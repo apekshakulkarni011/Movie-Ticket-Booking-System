@@ -30,8 +30,8 @@ Leave any add-ons/plugins for the acknowledgements section. Here are a few examp
 **After all, go to URL http://localhost:5000**
 
 
-**#Admin Login Details : **
+**#Admin Login Details :**
 
-**Name: Admin
+**Name: Admin**
 
-**Email: admin@gmail.com
+**Email: admin@gmail.com**
