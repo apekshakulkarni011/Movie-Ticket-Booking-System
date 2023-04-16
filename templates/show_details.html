@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% block head %}
+<title>Show name</title>
+{% endblock %}
+
+{% block body %}
+<div class="card" style="width: 95%;">
+  <div class="row">
+      <div class="col-6">
+        <div class="card-body">
+          <h5 class="card-title">{{show.name}}</h5>
+          <span class="badge badge-warning">{{show.genre}}</span>
+          <span class="badge badge-primary">{{show.duration}}h</span>
+
+          <p class="card-textp" style="width: 95%;">{{show.description}}</p>
+           <span class="badge badge-warning">{{show.name}} IMDB Rating : 6.3/10</span>
+          <br><br>
+          {% if user.name == "Admin" %}
+          <a class="btn btn-success" href="/screenings/add/{{ show.id }}">Add date</a>
+          <a class="btn btn-danger" href="/shows/delete/{{ show.id }}">Delete</a>
+          {% endif %}
+
+        </div>
+      </div>
+      <div class="col-6">
+        <img src={{show.img_link}} style="border-radius: 5px; width:90%; margin:15px;">
+      </div>
+    </div>
+</div>
+
+<br>
+{% if screenings == []%}
+  <div class="alert alert-warning" role="alert">
+    No screenings available for the show
+  </div>
+
+{% else %}
+<!-- screenings -->
+<table class="table">
+  <tr>
+    <th scope="col">Date</th>
+    <th scope="col">Time</th>
+    <th scope="col">Options</th>
+  </tr>
+  <tbody>
+    {%for screening in screenings%}
+    <tr>
+      <td>{{screening.datetime.date()}}</td>
+      <td>{{screening.datetime.time()}}</td>
+      <td>
+        <a href="/screenings/{{screening.id}}" class="btn btn-success">Reserve a seat</a>
+        <a href="/reservations/{{screening.id}}/quick" class="btn btn-warning">Quick reserve</a>
+        {% if user.name == "Admin" %}
+        <a href="/screening/delete/{{screening.id}}" class="btn btn-danger">Delete</a>
+        {%endif%}
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endif%}
+
+{% endblock %}

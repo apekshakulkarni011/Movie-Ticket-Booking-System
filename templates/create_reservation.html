@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block head %}
+<title>make/reservations</title>
+{% endblock %}
+
+{% block body %}
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title">Make Reservation</h5>
+    <p>
+      <b>Show: </b>{{ show.name }}<br>
+      <b>Seat: </b>{{ seat.position }}<br>
+      <b>Date and time: </b>{{ screening.datetime }}<br>
+     <!-- <b>Price: </b>{{ seat.price }}110Rs<br>-->
+      <b>Price: </b>{{ seat.price }}Rs<br>
+    </p>
+    <form action="/reservations/{{ screening.id }}/{{ seat.id }}" method="post">
+      <button type="submit" style="width: 100%;" class="btn btn-primary">Confirm reservation</button>
+    </form>
+  </div>
+</div>
+{% endblock %}

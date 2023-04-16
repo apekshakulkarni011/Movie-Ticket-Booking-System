@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block head %}
+<title>Profile</title>
+{% endblock %}
+
+{% block body %}
+{% if reservation_details == []%}
+  <div class="alert alert-warning" role="alert">
+    No reservations made yet
+  </div>
+{% endif%}
+
+{% for id, screening, show, seat in reservation_details %}
+<div class="card">
+  <div class="row">
+    <div class="col-6">
+      <img src={{show.img_link}} style="border-radius: 5px; width:90%; margin:15px;">
+    </div>
+    <div class="col-6">
+      <div class="card-body">
+        <h5 class="card-title">Reservation</h5>
+        <p>
+          <b>Show: </b>{{ show.name }}<br>
+          <b>Seat: </b>{{ seat.position }}<br>
+         <!-- <b>Price: </b>{{ seat.price }}110.0Rs<br>-->
+          <b>Price:</b>{{seat.price}}Rs<br>
+
+          <b>Date and time: </b>{{ screening.datetime }}<br>
+          <b>Name: </b>{{ user.name }}<br>
+          <b>Email: </b>{{ user.email }}<br>
+        </p>
+        <a class="btn btn-warning" href="/reservations/edit/{{ id }}">Edit</a>
+         <a class="btn btn-warning" href="/reservations/edit/{{ id }}">Print Ticket</a>
+        <a class="btn btn-danger" href="/reservations/delete/{{ id }}">Cancel</a>
+      </div>
+  </div>
+</div>
+</div>
+{% endfor %}
+{% endblock %}
