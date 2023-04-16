@@ -1,0 +1,3 @@
+flask
+flask_sqlalchemy
+ #<td>{{ data["vip_value"] }}0€</td>
