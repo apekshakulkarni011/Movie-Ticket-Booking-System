@@ -1,12 +1,12 @@
-Hii...all I have Created Movie-Ticket-Booking-System Which gives you fill of BookMyShow Application Handles.
+**Hii...all I have Created Movie-Ticket-Booking-System Which gives you fill of BookMyShow Application Handles.**
 
-#Here's why:
+**#Here's why:**
 
 Your time should be focused on creating something amazing. A project that solves a problem and helps others
 You shouldn't be doing the same tasks over and over like creating a README from scratch
 You should implement DRY principles to the rest of your life 😄
 
-#Built With :
+**#Built With :**
 
 This section should list any major frameworks/libraries used to bootstrap your project. 
 Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
@@ -17,7 +17,8 @@ Leave any add-ons/plugins for the acknowledgements section. Here are a few examp
  FLASK FRAMEWORK
  
 
-#ABOUT PROJECT
+**#ABOUT PROJECT**
+
 **Database Name: database**
 
 **Developed by Apeksha Kulkarni**
@@ -28,6 +29,9 @@ Leave any add-ons/plugins for the acknowledgements section. Here are a few examp
 
 **After all, go to URL http://localhost:5000**
 
-#Admin Login Details : 
-Name: Admin
-Email: admin@gmail.com
+
+**#Admin Login Details : **
+
+**Name: Admin
+
+**Email: admin@gmail.com
